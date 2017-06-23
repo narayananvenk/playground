@@ -19,10 +19,16 @@ import ScreenTwo from './app/ScreenTwo';
 const AppNavigator = StackNavigator(
 	{
 		ScreenOne: {
-			screen: ScreenOne
+			screen: ScreenOne,
+			navigationOptions: ({ navigation }) => ({
+				title: 'Screen One'
+			})
 		},
 		ScreenTwo: {
-			screen: ScreenTwo
+			screen: ScreenTwo,
+			navigationOptions: ({ navigation }) => ({
+				title: 'Screen Two'
+			})
 		}
 	},
 	{
@@ -30,12 +36,10 @@ const AppNavigator = StackNavigator(
 	}
 );
 
-export default class playground extends Component {
-	
+export default class playground extends Component {	
 	render() {
 		return(<AppNavigator ref={(nav) => { this.navigator = nav; }} />);
 	}
-	
 }
 
 AppRegistry.registerComponent('playground', () => playground);
