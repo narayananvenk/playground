@@ -4,42 +4,7 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { AppRegistry } from 'react-native';
+import App from './app/App';
 
-import { StackNavigator } from 'react-navigation';
-import ScreenOne from './app/ScreenOne';
-import ScreenTwo from './app/ScreenTwo';
-
-const AppNavigator = StackNavigator(
-	{
-		ScreenOne: {
-			screen: ScreenOne,
-			navigationOptions: ({ navigation }) => ({
-				title: 'Screen One'
-			})
-		},
-		ScreenTwo: {
-			screen: ScreenTwo,
-			navigationOptions: ({ navigation }) => ({
-				title: 'Screen Two'
-			})
-		}
-	},
-	{
-		initialRouteName: 'ScreenOne'
-	}
-);
-
-export default class playground extends Component {	
-	render() {
-		return(<AppNavigator ref={(nav) => { this.navigator = nav; }} />);
-	}
-}
-
-AppRegistry.registerComponent('playground', () => playground);
+AppRegistry.registerComponent('playground', () => App);
